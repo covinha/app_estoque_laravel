@@ -6,6 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="../../css/app.css" rel="stylesheet">
+
+
+
     <title>Document</title>
 </head>
 <body>
@@ -33,6 +36,13 @@
             <label for="valor">Valor: <span class="text-danger">*</span></label>
             <input type="number" id="valor" name="valor" class="form-control" required value="{{ $produto->valor }}">
         </div>
+
+        <div class="form-group">
+            <label for="descricao">Função: <span class="text-danger">*</span></label>
+            <input type="text" id="funcao" name="funcao" class="form-control" autofocus required value="{{ $produto->funcao }}">
+        </div>
+
+
         <div class="form-group">
             <label for="data_vencimento">Data de vencimento: </label>
             <input type="date" id="data_vencimento" name="data_vencimento" class="form-control" value="{{ $produto->data_vencimento }}">

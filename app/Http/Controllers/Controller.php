@@ -12,8 +12,5 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
 
-    public function mostrar_inserir()
-    {
-        return view('produto.inserir');
-    }
+
 }

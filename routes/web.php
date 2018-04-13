@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('principal');
 
 
 
@@ -20,10 +20,22 @@ Route::get('/', function () {
 });
 
 
-Route::get('/produtos/pesquisar', 'ProdutoController@pesquisar');
-Route::post('/produtos/pesquisar', 'ProdutoController@pesquisar');
-Route::get('/produtos/inserir', 'ProdutoController@mostrar_inserir');
-Route::post('/produtos/inserir', 'ProdutoController@inserir');
-Route::get('/produtos/alterar/{id}', 'ProdutoController@mostrar_alterar');
-Route::post('/produtos/alterar', 'ProdutoController@alterar');
-Route::get('/produtos/excluir/{id}', 'ProdutoController@excluir');
+Route::get('/produtos/pesquisar', 'FuncionarioController@pesquisar')->middleware ('auth');
+Route::post('/produtos/pesquisar', 'FuncionarioController@pesquisar')->middleware ('auth');
+Route::get('/produtos/inserir', 'FuncionarioController@mostrar_inserir')->middleware ('auth');
+Route::post('/produtos/inserir', 'FuncionarioController@inserir')->middleware ('auth');
+Route::get('/produtos/alterar/{id}', 'FuncionarioController@mostrar_alterar')->middleware ('auth');
+Route::post('/produtos/alterar', 'FuncionarioController@alterar')->middleware ('auth');
+Route::get('/produtos/excluir/{id}', 'FuncionarioController@excluir')->middleware ('auth');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
